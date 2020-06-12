@@ -1,15 +1,22 @@
 function mySearchFunction() {
-    var input, filter, ul, li, item, i, txtValue;
+    var input, filter, ul, item, i, txtValue;
     input = document.getElementById("input");
     filter = input.value.toUpperCase();
-    ul = document.getElementById("states");
-    li = ul.getElementsByTagName("li");  for (i = 0; i < li.length; i++) {
-      item = li[i];
+    ul = document.getElementById("city");
+      for (i = 0; i < length; i++) {
+      item = [i];
       txtValue = item.textContent || item.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
+        [i].style.display = "";
       } else {
-        li[i].style.display = "none";
+        [i].style.display = "none";
       }
     }
   }
+
+  var url = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=d4209304f0d7177a2344feb60a6dadd8"
+
+  // fetch (
+  //   "https://api.openweathermap.org/data/2.5/forecast?q=saltlakecity&appid=d4209304f0d7177a2344feb60a6dadd8"
+  //   //api.openweathermap.org/data/2.5/forecast?q={salt lake city}&appid={your api key}
+  // )
