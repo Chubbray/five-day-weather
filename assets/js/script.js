@@ -1,8 +1,8 @@
 function searchCitys(city) {
-  var apiKey = "d4209304f0d7177a2344feb60a6dadd8"
+  var apiKey = "9c96d6ff0e0ae61b13ab10a485fbdcc0"
 
   $.ajax({
-    url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=d4209304f0d7177a2344feb60a6dadd8",
+    url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=9c96d6ff0e0ae61b13ab10a485fbdcc0",
     method: "GET",
   }).then(function (response) {
     var imigeIcon = response.weather[0].icon;
@@ -20,7 +20,7 @@ function searchCitys(city) {
     var cityName = response.id;
 
     $.ajax({
-      url: "https://api.openweathermap.org/data/2.5/uvi?appid=d4209304f0d7177a2344feb60a6dadd8=" + latitude + "&" + "lon=" + longitude,
+      url: "https://api.openweathermap.org/data/2.5/uvi?appid=9c96d6ff0e0ae61b13ab10a485fbdcc0=" + latitude + "&" + "lon=" + longitude,
       method: "GET",
     }).then(function(response){
       var uvIndex = response.value;
@@ -38,27 +38,13 @@ function searchCitys(city) {
       }
     })
   })
+
+  $.ajax({
+    url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=9c96d6ff0e0ae61b13ab10a485fbdcc0",
+    method: "GET",
+  }).then(function(response){
+    var dateOne = imigeUrl;
+
+    $("#weatherImige").attr("src", imigeUrl);
+  })
 }
-
-// function mySearchFunction() {
-//   var input, filter, ul, item, i, txtValue;
-//   input = document.getElementById("input");
-//   filter = input.value.toUpperCase();
-//   ul = document.getElementById("city");
-//   for (i = 0; i < length; i++) {
-//     item = [i];
-//     txtValue = item.textContent || item.innerText;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//       [i].style.display = "";
-//     } else {
-//       [i].style.display = "none";
-//     }
-//   }
-// }
-
-// var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=d4209304f0d7177a2344feb60a6dadd8"
-
-//   // fetch (
-//    //  "https://api.openweathermap.org/data/2.5/forecast?q=SaltLakeCity&appid=d4209304f0d7177a2344feb60a6dadd8"
-//   //   //api.openweathermap.org/data/2.5/forecast?q={salt lake city}&appid={your api key}
-//   // )
