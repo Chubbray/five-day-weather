@@ -9,7 +9,7 @@ function searchCitys(city) {
     var imigeUrl = "https://openweathermap.org/img/w" + imigeIcon + ".png";
 
     $("#weatherImige").attr("src", imigeUrl);
-    ("#enteredCity").html(response.name + " (" + todayDate + ")");
+    $("#enteredCity").html(response.name + " (" + todayDate + ")");
     $("#temperature").text("Temperature: " + response.main.temp);
     $("#humidity").text("Humidity: " + response.main.humidity);
     $("#windSpeed").text("WindSpeed: " + response.wind.speed);
