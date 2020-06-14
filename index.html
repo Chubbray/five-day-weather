@@ -12,13 +12,25 @@
         <h1>Weather Dashboard</h1>
     </header>
 
-    <section>
+    <section class="container">
+      <div class="col-md-2">
         <h3>Search for a City:</h3>
         <input type="text" id="input" onkeyup="mySearchFunction()" placeholder="Search">
-            <ul id="city">
-                <li></li>
-                
-            </ul>
+        <div class="ajax"></div>
+      </div>  
+    </section>
+       
+    <section class="container">
+      <div class="col-md-10">
+        <div class="then">
+          <img id="weatherImige" src="imigeUrl">
+          <div id="enteredCity"></div>
+          <div id="temperature">Tempreature:</div>
+          <div id="humidity">Humidity:</div>
+          <div id="windSpeed">Wind Speed:</div>
+          <div class="card-header"></div>
+        </div>
+      </div>
     </section>
 
   <script src="./assets/js/script.js"></script>
